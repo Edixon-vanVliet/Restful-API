@@ -7,9 +7,13 @@ var app = express();
 const mongoose = require("mongoose");
 require("dotenv/config");
 
+const customers = require("./routes/customers");
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use("/api/customer", customers);
 
 mongoose.connect(
     process.env.DB_Connection,
