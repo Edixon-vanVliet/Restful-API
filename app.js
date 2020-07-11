@@ -19,7 +19,7 @@ mongoose.connect(
     process.env.DB_Connection,
     // to avoid deprecation warnings as indicated at
     // https://mongoosejs.com/docs/deprecations.html
-    { useNewUrlParser: true, useUnifiedTopology: true },
+    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
     () => {
         console.log("Connected to DB!");
     }
